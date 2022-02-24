@@ -6,10 +6,12 @@ class Repository:
 
     @classmethod
     def parse(self, list_address):
-        for i in range(len(list_address)):
-            response = ClientPancakeSwap().get_token(list_address[i]["address"])
+        message = []
+        for obj in list_address:
+            response = ClientPancakeSwap().get_token(obj["address"])
             if response["status"] == 200:
-                token = Token(response["body"]["name"], response["body"]["symbol"], response["body"]["price"], response["body"]["price_BNB"], list_address[i]["qtd"])
-                print(token)
+                token = Token(response["body"]["name"], response["body"]["symbol"], response["body"]["price"], response["body"]["price_BNB"], obj["quantity"])
+                message.append(token.__str__())
             else:
                 print(response["body"])
+        return message

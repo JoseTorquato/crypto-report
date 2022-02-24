@@ -28,4 +28,10 @@ class Token:
         return self._quantity
 
     def __str__(self):
-        return f"Nome: {self.name} | Simbolo: {self.symbol} | Preço em USD: {float(self.price_usd):.8f} | Preço em BNB: {float(self.price_bnb):.8f} | Valor em USD {(float(self.price_usd)*self.quantity):.2f}"
+        return f"""
+            <strong>Nome:</strong> {self.name} |
+            <strong>Simbolo:</strong>  {self.symbol} |
+            <strong>Preço em USD:</strong>  {float(self.price_usd):.8f} |
+            <strong>Preço em BNB:</strong>  {float(self.price_bnb):.8f} |
+            <strong>Valor em USD:</strong>  {(float(self.price_usd)*self.quantity):.2f}
+        """

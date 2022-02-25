@@ -22,5 +22,5 @@ if __name__ == "__main__":
     with open("resources/vault_address.json", "r") as vault_tokens:     
         tokens = json.loads(vault_tokens.read())
         report = Repository.parse(tokens)
-        Email().send(report[0])
+        Email().send(report)
 

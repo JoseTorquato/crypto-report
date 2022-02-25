@@ -20,13 +20,16 @@ class Email:
         <html>
         <head></head>
         <body>
-            <p>Olá!<br>
-            Como você está?<br>
-            Aqui está o report do dia {messagem}
+            <p>
+                Olá!<br>
+                Como você está?<br>
+                Aqui está o report dos seus tokens do dia
             </p>
+            {messagem}
         </body>
         </html>
         '''
+        print(message_html)
         print('Criando mensagem...')
         email_msg = MIMEMultipart()
         email_msg['From'] = self._remetente

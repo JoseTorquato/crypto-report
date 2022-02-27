@@ -1,4 +1,3 @@
-from email import message
 import json
 from src.services.send_email import Email
 from src.repository import Repository
@@ -25,4 +24,3 @@ if __name__ == "__main__":
         tokens = json.loads(vault_tokens.read())
         report = Repository.parse(tokens)
         Email().send(report)
-

@@ -11,7 +11,7 @@ class Repository:
             response = ClientPancakeSwap().get_token(obj["address"])
             if response["status"] == 200:
                 token = Token(response["body"]["name"], response["body"]["symbol"], response["body"]["price"], response["body"]["price_BNB"], obj["quantity"])
-                message += f"<p>{token.__str__()}</p>"
+                message += token.__str__()
             else:
                 print(response["body"])
         print(message)
